@@ -15,6 +15,14 @@
     <h1>Lab 3</h1>
   </header>
   <main>
+    <form id="data-form" name="data-form">
+      <fieldset id="data">
+          <label for="data-input">Send in data</label><br>
+          <input type="text" name="data-input" id="data-input" required pattern="[a-zA-Öa-ö]+" autocomplete="off">
+          <input type="submit" value="Submit" id="submit-data">
+      </fieldset>
+    </form>
+    <section id="result"></section>
     <canvas id="my-canvas"></canvas>
   </main>
   <footer></footer>
