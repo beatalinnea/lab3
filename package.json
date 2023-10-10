@@ -1,0 +1,29 @@
+{
+  "name": "lab3",
+  "version": "1.0.0",
+  "description": "Laboration 3 - 1DV610",
+  "type": "module",
+  "browser": "src/js/controller/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beatalinnea/lab3.git"
+  },
+  "author": "Beata Eriksson <be222gr@student.lnu.se>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beatalinnea/lab3/issues"
+  },
+  "homepage": "https://github.com/beatalinnea/lab3#readme",
+  "devDependencies": {
+    "@lnu/eslint-config": "^1.1.10",
+    "vite": "^4.4.11"
+  },
+  "dependencies": {
+    "very-simple-bar-chart": "^1.0.2"
+  }
+}
