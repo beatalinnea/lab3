@@ -5,21 +5,18 @@
  */
 export class Output {
   #result
+  #label
+
   constructor () {
     this.#result = document.getElementById('result')
+    this.#label = document.getElementById('input-label')
   }
 
-  // controller can do this?
+  setLabel (question) {
+    this.#label.textContent = question
+  }
+
   showResult (result) {
-    this.clearResult()
-    const p = document.createElement('p')
-    p.textContent = result
-    this.#result.appendChild(p)
-  }
-
-  clearResult () {
-    if (this.#result.childElementCount !== 0) {
-      this.#result.removeChild(this.#result.lastElementChild)
-    }
+    this.#result.textContent = result
   }
 }
