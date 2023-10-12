@@ -2,25 +2,27 @@
 import { Input } from '../view/input.js'
 import { Output } from '../view/output.js'
 import { MathGame } from '../model/mathGame.js'
+import { Corrector } from '../model/corrector.js'
 
 /**
  * The main starting point of the application.
  */
 class App {
+  // views
   input = new Input()
   output = new Output()
-  mathGame = new MathGame()
-  questions = null
-  answers = []
+
+  questions
+  questionsAndAnswers = []
 
   constructor () {
-    this.questions = this.mathGame.getMixedQuestion()
+    const mathGame = new MathGame()
+    this.questions = mathGame.getMultiplicationProblems(2)
     let counter = 0
     this.showQuestion(counter)
+
     document.addEventListener('inputChanged', (e) => {
-      // save input to answers instead.
-      // this.output.showResult(e.detail)
-      this.answers.push(e.detail)
+      this.pairQuestionWithAnswer(counter, e.detail)
       counter++
       if (counter < this.questions.length) {
         this.showQuestion(counter)
@@ -28,7 +30,16 @@ class App {
         this.showDone()
       }
     })
-    this.printHello(this.questions)
+  }
+
+  pairQuestionWithAnswer (index, answer) {
+    const question = this.questions[index]
+    const questionAnswerPair = {}
+
+    questionAnswerPair.question = question
+    questionAnswerPair.answer = answer
+
+    this.questionsAndAnswers.push(questionAnswerPair)
   }
 
   showQuestion (index) {
@@ -36,8 +47,10 @@ class App {
   }
 
   showDone () {
-    this.output.setLabel('Done')
-    console.log(this.answers)
+    this.input.clearInputForm()
+    const corrector = new Corrector()
+    const stats = corrector.getTimesTablesStats(this.questionsAndAnswers)
+    this.output.showResultTestObject(stats)
   }
 
   printHello (hello) {

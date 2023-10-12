@@ -12,11 +12,15 @@ export class Output {
     this.#label = document.getElementById('input-label')
   }
 
-  setLabel (question) {
-    this.#label.textContent = question
+  setLabel (label) {
+    this.#label.textContent = label
   }
 
   showResult (result) {
     this.#result.textContent = result
+  }
+
+  showResultTestObject (result) {
+    this.#result.textContent = JSON.stringify(result)
   }
 }

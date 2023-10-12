@@ -18,7 +18,7 @@ export class Generator {
     }
   }
 
-  getQuestion (method) {
+  getMathProblem (method) {
     const number1 = this.#getRandomNumber()
     const number2 = this.#getRandomNumber()
     if (method) {
@@ -26,6 +26,18 @@ export class Generator {
     } else {
       return `${number1} ${this.#method} ${number2}`
     }
+  }
+
+  generateMultiplicationTable (problemsPerNumber) {
+    const multiplicationProblems = []
+
+    for (const number of this.#numbers) {
+      for (let i = 0; i < problemsPerNumber; i++) {
+        multiplicationProblems.push(`${number} ${this.#method} ${this.#getRandomNumber()}`)
+      }
+    }
+
+    return multiplicationProblems
   }
 
   #getRandomNumber () {

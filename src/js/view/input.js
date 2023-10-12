@@ -21,6 +21,10 @@ export class Input {
     })
   }
 
+  clearInputForm () {
+    this.#dataForm.remove()
+  }
+
   // controller can do this?
   createNewCanvas () {
     const canvas = document.createElement('canvas')

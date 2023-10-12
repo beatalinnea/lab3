@@ -14,11 +14,16 @@ export class MathGame {
     return questions.flat()
   }
 
+  getMultiplicationProblems (amount) {
+    const generator = new Generator('*')
+    return generator.generateMultiplicationTable(amount)
+  }
+
   createQuestions (amount, method) {
     const generator = new Generator(method)
     const questions = []
     for (let i = 0; i < amount; i++) {
-      questions.push(generator.getQuestion())
+      questions.push(generator.getMathProblem())
     }
     return questions
   }
