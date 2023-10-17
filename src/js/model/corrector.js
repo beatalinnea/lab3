@@ -63,4 +63,27 @@ export class Corrector {
     }
     return stats
   }
+
+  getFeedbackString (stats) {
+    let feedbackString = ''
+    let wrongCounter = 0
+    for (const stat of stats) {
+      // find the one with most isInCorrect
+      if (wrongCounter > 3) {
+        feedbackString = 'You need A LOT of practice!'
+        return feedbackString
+      }
+      if (stat.isCorrect === 0) {
+        feedbackString += `You REALLY need to practice ${stat.timesTable} times table... `
+        wrongCounter++
+      } else if (stat.isIncorrect > 0) {
+        feedbackString += `You need to practice ${stat.timesTable} times table... `
+        wrongCounter++
+      }
+    }
+    if (feedbackString === '') {
+      feedbackString = 'You are a master of the times tables!'
+    }
+    return feedbackString
+  }
 }

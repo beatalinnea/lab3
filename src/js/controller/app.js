@@ -1,6 +1,8 @@
 /* eslint-disable jsdoc/require-jsdoc */
+import { Canvas } from '../view/canvas.js'
 import { Input } from '../view/input.js'
 import { Output } from '../view/output.js'
+import { Graph } from '../model/graph.js'
 import { MathGame } from '../model/mathGame.js'
 import { Corrector } from '../model/corrector.js'
 
@@ -50,7 +52,14 @@ class App {
     this.input.clearInputForm()
     const corrector = new Corrector()
     const stats = corrector.getTimesTablesStats(this.questionsAndAnswers)
-    this.output.showResultTestObject(stats)
+    this.output.showResult(corrector.getFeedbackString(stats))
+    this.showGraph(stats)
+  }
+
+  showGraph (stats) {
+    const canvasView = new Canvas()
+    const graph = new Graph(canvasView.getCanvas())
+    graph.createGraph(stats)
   }
 
   printHello (hello) {
