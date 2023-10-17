@@ -1,30 +1,43 @@
 /* eslint-disable jsdoc/require-jsdoc */
 import { Generator } from './generator.js'
+import { Graph } from './graph.js'
+import { Corrector } from './corrector.js'
 
 /**
- * @class Questions
+ * @class MathGame
  */
 export class MathGame {
-  getMixedQuestion () {
-    const questions = []
-    questions.push(this.createQuestions(5, '+'))
-    questions.push(this.createQuestions(5, '-'))
-    questions.push(this.createQuestions(5, '*'))
-    questions.push(this.createQuestions(5, '/'))
-    return questions.flat()
-  }
+  #corrector = new Corrector()
+  #questions
+  #questionsAndAnswers = []
 
-  getMultiplicationProblems (amount) {
+  getQuestions (amountPerNumber) {
     const generator = new Generator('*')
-    return generator.generateMultiplicationTable(amount)
+    this.#questions = generator.generateMixedMathProblems(amountPerNumber)
+    return [...this.#questions]
   }
 
-  createQuestions (amount, method) {
-    const generator = new Generator(method)
-    const questions = []
-    for (let i = 0; i < amount; i++) {
-      questions.push(generator.getMathProblem())
-    }
-    return questions
+  addAnswer (questionIndex, answer) {
+    const question = this.#questions[questionIndex]
+    const questionAnswerPair = {}
+
+    questionAnswerPair.question = question
+    questionAnswerPair.answer = answer
+
+    this.#questionsAndAnswers.push(questionAnswerPair)
+  }
+
+  #correctProblems () {
+    const stats = this.#corrector.getTimesTablesStats(this.#questionsAndAnswers)
+    return stats
+  }
+
+  getFeedback () {
+    return this.#corrector.getFeedbackString(this.#correctProblems())
+  }
+
+  createResultGraph (canvas) {
+    const graph = new Graph(canvas)
+    graph.createGraph(this.#correctProblems())
   }
 }

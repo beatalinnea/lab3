@@ -4,21 +4,23 @@
  */
 export class Generator {
   #numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-  #method = '+' // default
+  #method = '*' // default
 
   constructor (method) {
-    this.setMethod(method)
+    if (method) {
+      this.setMethod(method)
+    }
   }
 
   setMethod (method) {
     if (method === '+' || method === '-' || method === '*' || method === '/') {
       this.#method = method
     } else {
-      throw new Error('Invalid method')
+      throw new Error('Invalid argument - must be "+", "-", "*" or "/"')
     }
   }
 
-  getMathProblem (method) {
+  generateMathProblem (method) {
     const number1 = this.#getRandomNumber()
     const number2 = this.#getRandomNumber()
     if (method) {
@@ -28,7 +30,8 @@ export class Generator {
     }
   }
 
-  generateMultiplicationTable (problemsPerNumber) {
+  // problems per 1 - 9 as the parameter.
+  generateMixedMathProblems (problemsPerNumber) {
     const multiplicationProblems = []
 
     for (const number of this.#numbers) {
