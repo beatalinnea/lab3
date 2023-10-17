@@ -1,20 +1,30 @@
 /* eslint-disable jsdoc/require-jsdoc */
 import { Canvas } from '../view/canvas.js'
+import { Home } from '../view/home.js'
 import { Input } from '../view/input.js'
 import { Output } from '../view/output.js'
 import { MathGame } from '../model/mathGame.js'
 
 /**
- * The main starting point of the application.
+ * The game of the application.
  */
-class App {
+export class Game {
   #input = new Input()
   #output = new Output()
   #mathGame = new MathGame()
+  #home = new Home()
   #questions = []
 
-  constructor () {
-    this.#questions = this.#mathGame.getQuestions(2)
+  start () {
+    document.addEventListener('madeChoice', (e) => {
+      this.#home.hideRadioForm()
+      this.startGame(e.detail)
+    })
+  }
+
+  startGame (amount) {
+    this.#input.showInputForm()
+    this.#questions = this.#mathGame.getQuestions(amount)
     let questionCounter = 0
     this.showQuestion(questionCounter)
 
@@ -35,7 +45,6 @@ class App {
 
   showDone () {
     this.#input.clearInputForm()
-    console.log(this.#mathGame.getFeedback())
     this.#output.showResult(this.#mathGame.getFeedback())
     this.showGraph()
   }
@@ -44,15 +53,11 @@ class App {
     const canvasElement = new Canvas()
     this.#mathGame.createResultGraph(canvasElement.getCanvas())
   }
-
-  printHello (hello) {
-    console.log(hello)
-  }
 }
 
 try {
-  const app = new App()
-  app.printHello('hej')
+  const game = new Game()
+  game.start()
 } catch (e) {
   // error message send to view
   console.log(e)

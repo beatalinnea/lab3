@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="./favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+  <title>Times Tables Test</title>
+  <script type="module" src="./js/controller/game.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Take a Times Tables Test!</h1>
+  </header>
+  <main>
+    <form id="radio-form">
+      <fieldset>
+        <legend>Select the number of problems per times table</legend>
+        <label>
+          <input type="radio" name="questions" value="2"> 2
+        </label>
+        <label>
+          <input type="radio" name="questions" value="5"> 5
+        </label>
+        <label>
+          <input type="radio" name="questions" value="9"> 9
+        </label>
+        <!-- Add more radio buttons for 4 through 9 as needed -->
+      </fieldset>
+    </form>
+    <form id="data-form" name="data-form" class="hidden">
+      <fieldset id="data">
+          <label for="data-input" id="input-label"></label><br>
+          <input type="text" name="data-input" id="data-input" required pattern="[0-9.]+" autocomplete="off">
+          <input type="submit" value="Answer" id="submit-data">
+      </fieldset>
+    </form>
+    <section id="result-container">
+      <p id="result"></p>
+      <canvas id="my-canvas"></canvas>
+    </section>
+    <nav class="menu">
+      <ul>
+          <li><a href="index.html">Go Back</a></li>
+          <li class="hidden" id="try-again"><a href="game.html">Try Again!</a></li>
+      </ul>
+  </nav>
+  </main>
+  <footer></footer>
+</body>
+
+</html>

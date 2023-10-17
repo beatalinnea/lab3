@@ -6,6 +6,12 @@ body {
 	font-size: 1.2rem;
 }
 
+p {
+	margin-left: 30vw;
+	margin-right: 30vw;
+	padding: 10px;
+}
+
 form {
 padding: 7px;
 }
@@ -24,4 +30,40 @@ h1 {
 
 img {
 	width: 150px;
+}
+
+.menu {
+	grid-area: nav;
+	background-size: 100% 100px;
+	background-repeat: no-repeat;
+	text-align: center;
+	font-stretch: extra-expanded;
+}
+
+nav li {
+	list-style: none;
+	display: inline-block;
+}
+
+nav ul {
+	padding: 0;
+}
+
+nav a {
+	text-decoration: none;
+	color: black;
+	padding: 15px;
+	display: inline-block;
+	width: 100px;
+	margin: 10px;
+	transition-property: border-radius;
+	transition-duration: 0.1s;
+}
+
+nav a:hover {
+	background-color: rgb(114, 189, 255);
+}
+
+.hidden {
+	display: none;
 }

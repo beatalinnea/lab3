@@ -1,6 +1,6 @@
 /* eslint-disable jsdoc/require-jsdoc */
 /**
- * Class for correcting answers.
+ * Class for correcting multiplication questions.
  */
 export class Corrector {
   getTimesTablesStats (questionsAndAnswers) {
@@ -9,37 +9,37 @@ export class Corrector {
     }
     const correctedAnswers = []
     for (const questionAndAnswer of questionsAndAnswers) {
-      const whichTimesTable = this.getWhichTimesTable(questionAndAnswer.question)
-      const isCorrect = this.isCorrect(questionAndAnswer.question, questionAndAnswer.answer)
+      const whichTimesTable = this.#getWhichTimesTable(questionAndAnswer.question)
+      const isCorrect = this.#isCorrect(questionAndAnswer.question, questionAndAnswer.answer)
       const correctedAnswer = {
         timesTable: whichTimesTable,
         isCorrect
       }
       correctedAnswers.push(correctedAnswer)
     }
-    return this.toStats(correctedAnswers)
+    return this.#toStats(correctedAnswers)
   }
 
-  getWhichTimesTable (question) {
+  #getWhichTimesTable (question) {
     const numbers = question.split('*')
     const number1 = parseInt(numbers[0])
     return number1
   }
 
-  isCorrect (question, answer) {
-    const correctAnswer = this.getCorrectAnswer(question)
+  #isCorrect (question, answer) {
+    const correctAnswer = this.#getCorrectAnswer(question)
     // boolean - returns true if correct, false if not
     return parseInt(answer) === correctAnswer
   }
 
-  getCorrectAnswer (question) {
+  #getCorrectAnswer (question) {
     const numbers = question.split('*')
     const number1 = parseInt(numbers[0].trim())
     const number2 = parseInt(numbers[1].trim())
     return number1 * number2
   }
 
-  toStats (correctedAnswers) {
+  #toStats (correctedAnswers) {
     const stats = []
 
     for (const correctedAnswer of correctedAnswers) {

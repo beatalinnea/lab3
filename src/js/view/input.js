@@ -21,6 +21,10 @@ export class Input {
     })
   }
 
+  showInputForm () {
+    this.#dataForm.classList.remove('hidden')
+  }
+
   clearInputForm () {
     this.#dataForm.remove()
   }

@@ -24,6 +24,7 @@ export class Graph {
   createGraph (array) {
     this.#barChart.addSpecificValues(this.convertData(array))
     this.#barChart.addHeadline(`Correct answer out of ${(array[0].isCorrect + array[0].isIncorrect)}`)
+    this.#barChart.changeBackgroundColor('rgb(114, 189, 255)')
     this.#barChart.resize(600, 300)
   }
 }

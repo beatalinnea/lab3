@@ -18,6 +18,8 @@ export class Output {
 
   showResult (result) {
     this.#result.textContent = result
+    const tryAgainButton = document.getElementById('try-again')
+    tryAgainButton.classList.remove('hidden')
   }
 
   showResultTestObject (result) {
