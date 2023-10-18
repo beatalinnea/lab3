@@ -11,19 +11,15 @@ export class Home {
     this.#radioForm = document.getElementById('radio-form')
     this.#radioButtons = document.querySelectorAll('input[type="radio"]')
 
-    // Add event listeners to radio buttons
-    this.#addListeners()
+    this.#listenToButtons()
   }
 
-  #addListeners () {
+  #listenToButtons () {
     this.#radioButtons.forEach((radio) => {
-      radio.addEventListener('change', function () {
-        if (this.checked) {
-          const choiceEvent = new CustomEvent('madeChoice', {
-            detail: this.value
-          })
-          document.dispatchEvent(choiceEvent)
-        }
+      radio.addEventListener('change', () => {
+        if (!radio.checked) return
+        const choiceEvent = new CustomEvent('madeChoice', { detail: radio.value })
+        document.dispatchEvent(choiceEvent)
       })
     })
   }
