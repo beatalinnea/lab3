@@ -20,29 +20,29 @@ export class Generator {
     }
   }
 
-  generateMathProblem (method) {
-    const number1 = this.#getRandomNumber()
-    const number2 = this.#getRandomNumber()
-    if (method) {
-      return `${number1} ${method} ${number2}`
-    } else {
-      return `${number1} ${this.#method} ${number2}`
-    }
+  generateMathProblem () {
+    const number1 = this.generateRandomNum()
+    const number2 = this.generateRandomNum()
+    return `${number1} ${this.#method} ${number2}`
   }
 
-  // problems per 1 - 9 as the parameter.
-  getMixedMathProblems (problemsPerNumber) {
-    const multiplicationProblems = []
-
+  generateMathProblemsMix (problemsPerNumber) {
+    const mathProblems = []
     for (const number of this.#numbers) {
-      for (let i = 0; i < problemsPerNumber; i++) {
-        multiplicationProblems.push(`${number} ${this.#method} ${this.#getRandomNumber()}`)
-      }
+      mathProblems.push(...this.#generateProblemsForNumber(number, problemsPerNumber))
     }
-    return multiplicationProblems
+    return mathProblems
   }
 
-  #getRandomNumber () {
+  #generateProblemsForNumber (initialOperand, problemsPerNumber) {
+    const problems = []
+    for (let i = 0; i < problemsPerNumber; i++) {
+      problems.push(`${initialOperand} ${this.#method} ${this.generateRandomNum()}`)
+    }
+    return problems
+  }
+
+  generateRandomNum () {
     const random = this.#numbers[Math.floor(Math.random() * this.#numbers.length)]
     return random
   }

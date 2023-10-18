@@ -9,6 +9,7 @@ Fokusera på tydlighet, variation, ärlighet och vad som är intressant. Exempel
 ## Kapitel 4 - Comments
 
 ## Kapitel 5 - Formatting
+MathGame - inte möjligt att göra varje metodanrop i rad - däremot i controllern möjligt!
 
 ## Kapitel 6 - Objects and Data Structures
 Corrector är en klass som inte har några privata fält utan enbart erbjuder metoder för rättning av mattetal. 
