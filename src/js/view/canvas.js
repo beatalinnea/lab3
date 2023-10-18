@@ -1,6 +1,6 @@
 /* eslint-disable jsdoc/require-jsdoc */
 /**
- * Canvas class
+ * Class for handling the Canvas element.
  */
 export class Canvas {
   constructor () {

@@ -5,24 +5,20 @@
  */
 export class Output {
   #result
-  #label
+  #questionLabel
 
   constructor () {
     this.#result = document.getElementById('result')
-    this.#label = document.getElementById('input-label')
+    this.#questionLabel = document.getElementById('question-label')
   }
 
-  setLabel (label) {
-    this.#label.textContent = label
+  viewQuestion (question) {
+    this.#questionLabel.textContent = question
   }
 
-  showResult (result) {
-    this.#result.textContent = result
+  showResult (gameResult) {
+    this.#result.textContent = gameResult
     const tryAgainButton = document.getElementById('try-again')
     tryAgainButton.classList.remove('hidden')
-  }
-
-  showResultTestObject (result) {
-    this.#result.textContent = JSON.stringify(result)
   }
 }

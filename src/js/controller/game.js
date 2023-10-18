@@ -40,7 +40,7 @@ export class Game {
   }
 
   showQuestion (index) {
-    this.#output.setLabel(this.#questions[index])
+    this.#output.viewQuestion(this.#questions[index])
   }
 
   showDone () {

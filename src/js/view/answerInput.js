@@ -4,21 +4,21 @@
  * Class for handling Answer Input.
  */
 export class AnswerInput {
-  #dataForm
-  #inputElement
+  #gameForm
+  #answerInputField
 
   constructor () {
-    this.#dataForm = document.getElementById('data-form')
-    this.#inputElement = document.getElementById('data-input')
+    this.#gameForm = document.getElementById('game-form')
+    this.#answerInputField = document.getElementById('answer-input')
 
     this.#setupInputListener()
   }
 
   #setupInputListener () {
-    this.#dataForm.addEventListener('submit', (event) => {
+    this.#gameForm.addEventListener('submit', (event) => {
       event.preventDefault()
-      this.#handleInputEvent(this.#inputElement.value)
-      this.#inputElement.value = ''
+      this.#handleInputEvent(this.#answerInputField.value)
+      this.#answerInputField.value = ''
     })
   }
 
@@ -28,14 +28,14 @@ export class AnswerInput {
   }
 
   showInputForm () {
-    this.#dataForm.classList.remove('hidden')
+    this.#gameForm.classList.remove('hidden')
   }
 
   hideInputForm () {
-    this.#dataForm.classList.add('hidden')
+    this.#gameForm.classList.add('hidden')
   }
 
   clearInputForm () {
-    this.#dataForm.remove()
+    this.#gameForm.remove()
   }
 }
