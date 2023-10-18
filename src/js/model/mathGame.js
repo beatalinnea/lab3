@@ -36,7 +36,7 @@ export class MathGame {
   }
 
   #correctQuestions () {
-    return this.#corrector.getTimesTablesStats(this.#questionsAndAnswers)
+    return this.#corrector.correctAnswers(this.#questionsAndAnswers)
   }
 
   getFeedback () {

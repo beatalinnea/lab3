@@ -5,6 +5,7 @@ Fokusera på tydlighet, variation, ärlighet och vad som är intressant. Exempel
 ## Kapitel 2 - Meaningful Names
 
 ## Kapitel 3 - Functions
+Corrector har bra namngivning - is för boolean, verb för andra metoder
 
 ## Kapitel 4 - Comments
 
