@@ -1,13 +1,18 @@
 /* eslint-disable jsdoc/require-jsdoc */
 /**
- * Class for handling the Canvas element.
+ * Class containing methods for creating and appending a canvas element to the DOM.
  */
 export class Canvas {
-  constructor () {
-    this.canvas = document.getElementById('my-canvas')
+  createCanvas () {
+    this.canvas = document.createElement('canvas')
+    return this.canvas
   }
 
-  getCanvas () {
-    return this.canvas
+  viewCanvas () {
+    if (!this.canvas) {
+      throw new Error('Canvas not created')
+    }
+    const resultContainer = document.getElementById('result-container')
+    resultContainer.appendChild(this.canvas)
   }
 }

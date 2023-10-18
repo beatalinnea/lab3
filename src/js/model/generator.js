@@ -39,7 +39,6 @@ export class Generator {
         multiplicationProblems.push(`${number} ${this.#method} ${this.#getRandomNumber()}`)
       }
     }
-
     return multiplicationProblems
   }
 

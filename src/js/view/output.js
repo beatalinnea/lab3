@@ -21,4 +21,8 @@ export class Output {
     const tryAgainButton = document.getElementById('try-again')
     tryAgainButton.classList.remove('hidden')
   }
+
+  showErrorMessage (message) {
+    this.#result.textContent = message
+  }
 }
