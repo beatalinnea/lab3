@@ -18,40 +18,51 @@ export class App {
 
   static main () {
     const app = new App()
-    app.start()
+    app.makeGameChoice()
   }
 
-  start () {
+  makeGameChoice () {
     document.addEventListener('madeChoice', (e) => {
       try {
-        this.#radioInput.hideRadioForm()
-        this.startGame(e.detail)
+        const questionAmount = e.detail
+        this.startGame(questionAmount)
       } catch (e) {
         this.#handleError(e)
       }
     })
   }
 
-  // event listener, need try catch.
-  startGame (amount) {
+  startGame (questionAmount) {
+    this.#questions = this.#mathGame.getQuestions(questionAmount)
+    this.#switchForms()
+    this.#runQuestions()
+  }
+
+  #switchForms () {
+    this.#radioInput.hideRadioForm()
     this.#answerInput.showInputForm()
-    this.#questions = this.#mathGame.getQuestions(amount)
+  }
+
+  #runQuestions () {
     let questionCounter = 0
     this.#showQuestion(questionCounter)
-
     document.addEventListener('inputChanged', (e) => {
       try {
         this.#mathGame.addAnswer(questionCounter, e.detail)
         questionCounter++
-        if (questionCounter < this.#questions.length) {
-          this.#showQuestion(questionCounter)
-        } else {
-          this.#showDone()
-        }
+        this.#nextQuestion(questionCounter)
       } catch (e) {
         this.#handleError(e)
       }
     })
+  }
+
+  #nextQuestion (index) {
+    if (index < this.#questions.length) {
+      this.#showQuestion(index)
+    } else {
+      this.#showDone()
+    }
   }
 
   #showQuestion (index) {
@@ -71,6 +82,7 @@ export class App {
   }
 
   #handleError (e) {
+    this.#answerInput.hideInputForm()
     const errorView = new ErrorView(e.message)
     errorView.viewError()
   }
