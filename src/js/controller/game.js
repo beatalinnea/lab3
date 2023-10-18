@@ -1,7 +1,7 @@
 /* eslint-disable jsdoc/require-jsdoc */
 import { Canvas } from '../view/canvas.js'
-import { Home } from '../view/home.js'
-import { Input } from '../view/input.js'
+import { RadioInput } from '../view/radioInput.js'
+import { AnswerInput } from '../view/answerInput.js'
 import { Output } from '../view/output.js'
 import { MathGame } from '../model/mathGame.js'
 
@@ -9,10 +9,10 @@ import { MathGame } from '../model/mathGame.js'
  * The game of the application.
  */
 export class Game {
-  #input = new Input()
+  #input = new AnswerInput()
   #output = new Output()
   #mathGame = new MathGame()
-  #home = new Home()
+  #home = new RadioInput()
   #questions = []
 
   start () {
