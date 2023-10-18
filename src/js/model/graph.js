@@ -10,21 +10,27 @@ export class Graph {
     this.#barChart = new BarChart(canvas)
   }
 
-  convertData (array) {
-    const dataArray = []
-    for (const obj of array) {
-      const newObj = {}
-      newObj.x = `table ${obj.timesTable}`
-      newObj.y = obj.isCorrect
-      dataArray.push(newObj)
-    }
-    return dataArray
-  }
-
-  createGraph (array) {
-    this.#barChart.addSpecificValues(this.convertData(array))
-    this.#barChart.addHeadline(`Correct answer out of ${(array[0].isCorrect + array[0].isIncorrect)}`)
+  /**
+   * Creates a graph based on the data.
+   *
+   * @param {[object]} gameResult - The data to be used in the graph.
+   * @param {number} maxScore - The maximum score possible.
+   */
+  createGraph (gameResult, maxScore) {
+    this.#barChart.addSpecificValues(this.#convertToAxisValues(gameResult))
+    this.#barChart.addHeadline(`Correct answer out of ${maxScore}`)
     this.#barChart.changeBackgroundColor('rgb(114, 189, 255)')
     this.#barChart.resize(600, 300)
+  }
+
+  #convertToAxisValues (result) {
+    const axisValues = []
+    for (const obj of result) {
+      const newValue = {}
+      newValue.x = `table ${obj.timesTable}`
+      newValue.y = obj.amountCorrect
+      axisValues.push(newValue)
+    }
+    return axisValues
   }
 }

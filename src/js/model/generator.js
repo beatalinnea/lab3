@@ -31,7 +31,7 @@ export class Generator {
   }
 
   // problems per 1 - 9 as the parameter.
-  generateMixedMathProblems (problemsPerNumber) {
+  getMixedMathProblems (problemsPerNumber) {
     const multiplicationProblems = []
 
     for (const number of this.#numbers) {

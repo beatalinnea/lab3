@@ -49,8 +49,8 @@ export class Corrector {
       if (!timesTableStats) {
         timesTableStats = {
           timesTable,
-          isCorrect: 0,
-          isIncorrect: 0
+          amountCorrect: 0,
+          amountIncorrect: 0
         }
         stats.push(timesTableStats)
       }

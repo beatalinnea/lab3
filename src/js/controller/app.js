@@ -48,7 +48,7 @@ export class App {
     this.#showQuestion(questionCounter)
     document.addEventListener('inputChanged', (e) => {
       try {
-        this.#mathGame.addAnswer(questionCounter, e.detail)
+        this.#mathGame.addAnswerToQuestion(questionCounter, e.detail)
         questionCounter++
         this.#nextQuestion(questionCounter)
       } catch (e) {
@@ -76,9 +76,9 @@ export class App {
   }
 
   #showGraph () {
-    const canvasElement = new Canvas()
-    this.#mathGame.createResultGraph(canvasElement.createCanvas())
-    canvasElement.viewCanvas()
+    const canvas = new Canvas()
+    this.#mathGame.createResultGraph(canvas.create())
+    canvas.view()
   }
 
   #handleError (e) {

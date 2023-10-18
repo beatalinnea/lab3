@@ -3,12 +3,12 @@
  * Class containing methods for creating and appending a canvas element to the DOM.
  */
 export class Canvas {
-  createCanvas () {
+  create () {
     this.canvas = document.createElement('canvas')
     return this.canvas
   }
 
-  viewCanvas () {
+  view () {
     if (!this.canvas) {
       throw new Error('Canvas not created')
     }
