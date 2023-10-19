@@ -3,19 +3,31 @@ import { Graph } from './graph.js'
 import { Corrector } from './corrector.js'
 
 /**
- * @class MathGame
+ * Class for handling the main business logic of the math game.
  */
 export class MathGame {
   #corrector = new Corrector()
   #questions
   #questionsAndAnswers = []
 
+  /**
+   * Gives you math problems for the game.
+   *
+   * @param {number} questionsPerTable - How many questions should be generated for each times table.
+   * @returns {string[]} An array of math problems in the form of strings.
+   */
   getQuestions (questionsPerTable) {
     const generator = new Generator('*')
     this.#questions = generator.generateMathProblemsMix(questionsPerTable)
     return [...this.#questions]
   }
 
+  /**
+   * Pairs the sent in answer with the question.
+   *
+   * @param {number} questionIndex - which question was answered.
+   * @param {number} answer - The answer to the math question.
+   */
   addAnswerToQuestion (questionIndex, answer) {
     if (!this.#questions) {
       throw new Error('No questions to answer')
@@ -27,6 +39,11 @@ export class MathGame {
     this.#questionsAndAnswers.push(paired)
   }
 
+  /**
+   * Edits a graph showing the results based on the questions and given answers.
+   *
+   * @param {HTMLCanvasElement} canvas - The canvas element to be used in the graph.
+   */
   createResultGraph (canvas) {
     const correctedQuestions = this.#correctQuestions()
     const maxCorrectAnswers = this.#questionsAndAnswers.length / 9
@@ -38,6 +55,11 @@ export class MathGame {
     return this.#corrector.correctAnswers(this.#questionsAndAnswers)
   }
 
+  /**
+   * Gives feedback based on the results of the game.
+   *
+   * @returns {string} A feedback string based on the results of the game.
+   */
   getFeedback () {
     const correctedAnswers = this.#correctQuestions()
     const feedbackCategories = {

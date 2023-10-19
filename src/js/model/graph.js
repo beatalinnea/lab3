@@ -1,10 +1,15 @@
 import { BarChart } from 'very-simple-bar-chart'
 /**
- * Class for handling a graph.
+ * Class for wrapping and handling a graph created using extern library very-simple-bar-chart.
  */
 export class Graph {
   #barChart
 
+  /**
+   * Creates a graph using the canvas element.
+   *
+   * @param {HTMLCanvasElement} canvas - The canvas element to be used in the graph.
+   */
   constructor (canvas) {
     this.#barChart = new BarChart(canvas)
   }
