@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-jsdoc */
 import { ErrorView } from '../view/errorView.js'
 import { Canvas } from '../view/canvas.js'
 import { RadioInput } from '../view/radioInput.js'
@@ -7,9 +6,9 @@ import { Output } from '../view/output.js'
 import { MathGame } from '../model/mathGame.js'
 
 /**
- * The game of the application.
+ * This is the main class of the application.
  */
-export class App {
+export class TimesTablesGame {
   #answerInput = new AnswerInput()
   #output = new Output()
   #mathGame = new MathGame()
@@ -17,7 +16,7 @@ export class App {
   #questions = []
 
   static main () {
-    const app = new App()
+    const app = new TimesTablesGame()
     app.makeGameChoice()
   }
 
@@ -89,7 +88,7 @@ export class App {
 }
 
 try {
-  App.main()
+  TimesTablesGame.main()
 } catch (e) {
   e.message = 'An unexpected error occurred'
   const errorView = new ErrorView(e.message)

@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-jsdoc */
 /**
  * Class containing methods for creating and appending a canvas element to the DOM.
  */

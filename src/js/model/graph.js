@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-jsdoc */
 import { BarChart } from 'very-simple-bar-chart'
 /**
  * Class for handling a graph.

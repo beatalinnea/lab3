@@ -1,8 +1,13 @@
-/* eslint-disable jsdoc/require-jsdoc */
 /**
  * Class for correcting multiplication questions.
  */
 export class Corrector {
+  /**
+   * Corrects the answers of the questions. Questions and answers should be equal after correction to be correct.
+   *
+   * @param {object[]} questionsAndAnswers - Key value pairs of questions and answers { question: '2 * 3', answer: '6' }
+   * @returns {object[]} result - Amount of incorrect and correct answers for each times table.
+   */
   correctAnswers (questionsAndAnswers) {
     const correctedAnswers = []
     for (const questionAndAnswer of questionsAndAnswers) {

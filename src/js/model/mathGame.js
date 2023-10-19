@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-jsdoc */
 import { Generator } from './generator.js'
 import { Graph } from './graph.js'
 import { Corrector } from './corrector.js'

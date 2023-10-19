@@ -1,5 +1,3 @@
-/* eslint-disable jsdoc/require-jsdoc */
-
 /**
  * Class for handling Answer Input.
  */

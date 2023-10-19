@@ -56,12 +56,11 @@ nav a {
 	display: inline-block;
 	width: 100px;
 	margin: 10px;
-	transition-property: border-radius;
-	transition-duration: 0.1s;
+	background-color: rgb(114, 189, 255);
 }
 
 nav a:hover {
-	background-color: rgb(114, 189, 255);
+	background-color: rgb(59, 164, 255);
 }
 
 .hidden {

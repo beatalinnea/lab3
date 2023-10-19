@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-jsdoc */
 /**
  * Class for generating a set of questions.
  */
