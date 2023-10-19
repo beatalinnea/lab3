@@ -10,7 +10,6 @@ export class RadioInput {
   constructor () {
     this.#radioForm = document.getElementById('radio-form')
     this.#radioButtons = document.querySelectorAll('input[type="radio"]')
-
     this.setupButtonListeners()
   }
 

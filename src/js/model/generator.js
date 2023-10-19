@@ -43,7 +43,6 @@ export class Generator {
   }
 
   generateRandomNum () {
-    const random = this.#numbers[Math.floor(Math.random() * this.#numbers.length)]
-    return random
+    return this.#numbers[Math.floor(Math.random() * this.#numbers.length)]
   }
 }

@@ -62,13 +62,13 @@ export class MathGame {
   #generateFeedbackString (feedbackCategories) {
     let feedbackString = ''
     if (feedbackCategories.perfect.length > 0) {
-      feedbackString += `You are the master of time tables ${feedbackCategories.perfect.join(', ')}... `
+      feedbackString += `You are the master of times tables ${feedbackCategories.perfect.join(', ')}... `
     }
     if (feedbackCategories.needPractice.length > 0) {
-      feedbackString += `You need to practice time tables ${feedbackCategories.needPractice.join(', ')}... `
+      feedbackString += `You need to practice times tables ${feedbackCategories.needPractice.join(', ')}... `
     }
     if (feedbackCategories.reallyNeedPractice.length > 0) {
-      feedbackString += `Have you ever heard of time tables ${feedbackCategories.reallyNeedPractice.join(', ')}? `
+      feedbackString += `Have you ever heard of times tables ${feedbackCategories.reallyNeedPractice.join(', ')}? `
     }
     return feedbackString
   }

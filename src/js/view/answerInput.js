@@ -10,7 +10,6 @@ export class AnswerInput {
   constructor () {
     this.#gameForm = document.getElementById('game-form')
     this.#answerInputField = document.getElementById('answer-input')
-
     this.#setupInputListener()
   }
 

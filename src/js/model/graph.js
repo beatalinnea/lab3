@@ -17,13 +17,13 @@ export class Graph {
    * @param {number} maxScore - The maximum score possible.
    */
   createGraph (gameResult, maxScore) {
-    this.#barChart.addSpecificValues(this.#convertToAxisValues(gameResult))
+    this.#barChart.addValues(this.#convertToDataEntries(gameResult))
     this.#barChart.addHeadline(`Correct answer out of ${maxScore}`)
+    this.#barChart.changeSize(700, 300)
     this.#barChart.changeBackgroundColor('rgb(114, 189, 255)')
-    this.#barChart.resize(600, 300)
   }
 
-  #convertToAxisValues (result) {
+  #convertToDataEntries (result) {
     const axisValues = []
     for (const obj of result) {
       const newValue = {}
