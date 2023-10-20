@@ -19,3 +19,8 @@
 
 ## Notes for developers
 - This project consists of client-side code and follows a strict MVC (Model-View-Controller) design. In this design, the "View" package is responsible for manipulating, adding, and extracting HTML elements. The "Model" package handles the business logic behind Times Tables Test, while the "Controller" serves as an intermediary, responding to events and calling either the "Model" or the "View" as needed
+
+## Testing
+- The project have been tested manually in it's live environment. These are publically available.
+- [Test Specification](./project/testspecification.md)
+- [Test Report](./project/testreport.md)
