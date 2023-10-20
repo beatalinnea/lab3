@@ -1,4 +1,4 @@
-import { BarChart } from 'very-simple-bar-chart'
+import { BarChart } from '../../../node_modules/very-simple-bar-chart'
 /**
  * Class for wrapping and handling a graph created using extern library very-simple-bar-chart.
  */
