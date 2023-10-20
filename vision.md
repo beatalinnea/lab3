@@ -24,4 +24,4 @@ Det finns flera appar och webbplatser som erbjuder övningar och tester för mul
 ### Teknik
 * Språk: JavaScript, HTML/CSS
 * Host: Netlify
-* Externt bibliotek: (very-simple-bar-chart)[!https://www.npmjs.com/package/very-simple-bar-chart] 1.1.7
+* Externt bibliotek: [very-simple-bar-chart](https://www.npmjs.com/package/very-simple-bar-chart) 1.1.7
