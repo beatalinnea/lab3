@@ -37,3 +37,4 @@ RadioInput har flera metoder som inte använder privat fält - ändå väljer ja
 
 ## Kapitel 11 - Systems
 Jag har svårt att greppa detta kapitel och hur jag ska relatera det till denna uppgift. Jag tolkar det som att det förespråkar Separation of Concerns och hur olika komponenter arbetar och fungerar tillsammans utan att känna till "the big picture" - att det är så mjukvara bör utvecklas. Kapitlet nämner ingenting om MVC specifikt men jag anser att det grundar sig i samma approach. Jag försöker att hålla low coupling genomgående, om jag bortser från controllern som blir ganska snurrig - samtidigt kan jag se controllern som lite utanför denna princip, då dens uppgift faktiskt är att vara lite mer av en dirigent i min uppfattning.
+![screen-11](./img/screen-11.png)
