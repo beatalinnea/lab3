@@ -8,7 +8,7 @@ import { MathGame } from '../model/mathGame.js'
 /**
  * This is the main class of the application.
  */
-export class TimesTablesGame {
+export class App {
   #answerInput = new AnswerInput()
   #output = new Output()
   #mathGame = new MathGame()
@@ -16,7 +16,7 @@ export class TimesTablesGame {
   #questions = []
 
   static main () {
-    const app = new TimesTablesGame()
+    const app = new App()
     app.makeGameChoice()
   }
 
@@ -88,7 +88,7 @@ export class TimesTablesGame {
 }
 
 try {
-  TimesTablesGame.main()
+  App.main()
 } catch (e) {
   e.message = 'An unexpected error occurred'
   const errorView = new ErrorView(e.message)
