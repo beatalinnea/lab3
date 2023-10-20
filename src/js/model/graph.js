@@ -1,4 +1,5 @@
 import { BarChart } from 'very-simple-bar-chart'
+
 /**
  * Class for wrapping and handling a graph created using extern library very-simple-bar-chart.
  */
@@ -22,7 +23,7 @@ export class Graph {
    */
   createGraph (gameResult, maxScore) {
     this.#barChart.addValues(this.#convertToDataEntries(gameResult))
-    this.#barChart.addHeadline(`Correct answer out of ${maxScore}`)
+    this.#barChart.addHeadline(`Correct answer out of ${maxScore} possible - Max total is ${maxScore * 9}`)
     this.#barChart.changeSize(700, 300)
     this.#barChart.changeBackgroundColor('rgb(114, 189, 255)')
   }

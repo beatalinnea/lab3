@@ -13,7 +13,8 @@ Denna kravspecifikation beskriver de viktigaste funktionella och icke-funktionel
   3.1 Appen ska generera en översiktlig graf över användarens resultat.             
   3.2 Grafen ska tydligt visa hur många problem som besvarades korrekt för respektive multiplikationstabell.               
 4. Användar Gränssnitt              
-  4.1 Applikationens gränssnitt ska innehålla ständigt synliga knappar för navigering.          
+  4.1 Applikationens gränssnitt ska innehålla ständigt synliga knappar för navigering.       
+  4.2 Efter avslutat test har användaren möjlighet att försöka igen.   
 ## Icke-funktionella krav
 1. Teknisk stack            
   1.1 Applikationen ska byggas med JavaScript, HTML och CSS.           
