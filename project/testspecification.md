@@ -11,9 +11,10 @@
 * Requirements: 1.1, 1.2, 2.1
 * Steps
 1. Click on "Start."
-2. You will be presented with various options for the number of questions.
+2. Check that you are presented with options regarding amount of questions.
 3. Click on option 1.
-4. A math problem is displayed.
+4. Check that a math problem is displayed.
+
 #### TC1.2 - Answer question and get a new one
 * Requirements: 1.1, 1.2
 * Steps

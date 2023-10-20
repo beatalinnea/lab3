@@ -1,7 +1,7 @@
 import { BarChart } from 'very-simple-bar-chart'
 
 /**
- * Class for wrapping and handling a graph created using extern library very-simple-bar-chart.
+ * Class for wrapping and handling a graph created using external library very-simple-bar-chart.
  */
 export class Graph {
   #barChart
@@ -28,14 +28,14 @@ export class Graph {
     this.#barChart.changeBackgroundColor('rgb(114, 189, 255)')
   }
 
-  #convertToDataEntries (result) {
-    const axisValues = []
-    for (const obj of result) {
-      const newValue = {}
-      newValue.x = `table ${obj.timesTable}`
-      newValue.y = obj.amountCorrect
-      axisValues.push(newValue)
+  #convertToDataEntries (results) {
+    const dataEntries = []
+    for (const result of results) {
+      const newEntry = {}
+      newEntry.x = `table ${result.timesTable}`
+      newEntry.y = result.amountCorrect
+      dataEntries.push(newEntry)
     }
-    return axisValues
+    return dataEntries
   }
 }

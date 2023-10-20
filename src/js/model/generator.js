@@ -33,13 +33,13 @@ export class Generator {
   /**
    * Generates a set of math problems for all numbers between 1-9 to be the initial operand in the problem.
    *
-   * @param {number} problemsPerNumber - For each number between 1-9, how many problems should be generated.
+   * @param {number} amountPerNumber - For each number between 1-9, how many problems should be generated.
    * @returns {string[]} An array of math problems in the form of strings.
    */
-  generateMathProblemsMix (problemsPerNumber) {
+  generateMathProblemsMix (amountPerNumber) {
     const mathProblems = []
     for (const number of this.#numbers) {
-      mathProblems.push(...this.#generateProblemsForNumber(number, problemsPerNumber))
+      mathProblems.push(...this.#generateProblemsForNumber(number, amountPerNumber))
     }
     return mathProblems
   }

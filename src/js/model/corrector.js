@@ -11,12 +11,9 @@ export class Corrector {
   correctAnswers (questionsAndAnswers) {
     const correctedAnswers = []
     for (const questionAndAnswer of questionsAndAnswers) {
-      const whichTimesTable = this.#extractTimesTable(questionAndAnswer.question)
+      const timesTable = this.#extractTimesTable(questionAndAnswer.question)
       const isCorrect = this.#isCorrect(questionAndAnswer.question, questionAndAnswer.answer)
-      const correctedAnswer = {
-        timesTable: whichTimesTable,
-        isCorrect
-      }
+      const correctedAnswer = { timesTable, isCorrect }
       correctedAnswers.push(correctedAnswer)
     }
     return this.#calculateStatistics(correctedAnswers)
@@ -28,9 +25,9 @@ export class Corrector {
     return initialOperand
   }
 
-  #isCorrect (question, answer) {
+  #isCorrect (question, userAnswer) {
     const correctAnswer = this.#getCorrectAnswer(question)
-    return parseInt(answer) === correctAnswer
+    return parseInt(userAnswer) === correctAnswer
   }
 
   #getCorrectAnswer (question) {

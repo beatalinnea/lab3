@@ -1,5 +1,5 @@
 # Test Report
-* Date: 20/10
+* Date: 20/10-23
 * Type of Test: Manual Testing
 * Tested in: Live Environment [here](https://times-tables-test.netlify.app/)
 * Version: 1.0.0
