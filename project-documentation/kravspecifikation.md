@@ -21,9 +21,9 @@ Denna kravspecifikation beskriver de viktigaste funktionella och icke-funktionel
   1.3 Externt bibliotek very-simple-bar-chart ska användas för att generera diagram.        
 2. Kodkvalitet             
   2.1 Koden ska hela tiden utvecklas med strävan efter att kommunicera väl och vara och efterföljs i största mån utifrån principer som nämns i Clean Code av Robert C. Martin.        
-  2.2 Koden utvecklas med LNUs config av ESLint för att hålla standard för formattering*.         
+  2.2 Koden ska utvecklas med LNUs config av ESLint för att hålla standard för formattering*.         
 3. Tillgänglighet          
-  3.1 Applikationen är nåbar på internet         
+  3.1 Applikationen ska vara nåbar på internet         
             
 
-\* LNUs config av ESLint är manipulerat för att inte kräva JSDoc intill varje skriven metod. ![eslint-config](./img/eslint-config.png)
+\* LNUs config av ESLint ska manipuleras för att inte kräva JSDoc intill varje skriven metod. ![eslint-config](../img/eslint-config.png)
