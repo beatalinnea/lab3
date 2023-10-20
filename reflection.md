@@ -11,6 +11,8 @@ Corrector har bra namngivning - is för boolean, verb för andra metoder
 - följer med Blocks and indenting (functions should be small) - tycker indenteringsnivå 1-2 OK. försökt hållt mig till det i mina loopar, men tillåter dom att utföra uppgifter som är längre en en rad (gärna ett metodanrop) - då detta i vissa fall skulle göra att om jag bryter ut funktionaliteten i for loopen till en egen metod hade den eventuellt behövt fler parametrar, vilket också diskuteras hur en metod som inte är monodiac ska eftertänkas. (exempel de två for looparna i corrector)
 
 ## Kapitel 4 - Comments
+- Har dom bara till publika metoder i model - de som innehåller logik som inte är appspecifik utan egentligen kan återanvändas.
+
 "Function Headers
 Short functions don’t need much description. A well-chosen name for a small function that does one thing is usually better than a comment header."
 
